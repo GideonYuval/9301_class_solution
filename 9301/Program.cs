@@ -208,8 +208,11 @@ namespace _9301_questions
         // note: assume queue is not empty
         // tip: tricky...
 
+
+
         static int RemoveAndReturnLast(Queue<int> q)
         {
+
             Queue<int> temp = new Queue<int>();
             int len = 0, last=0;
             while (!q.IsEmpty())
@@ -245,34 +248,6 @@ namespace _9301_questions
         }
 
         // 8
-        // RemoveAndReturnLastNoTemp
-        // param : Queue<int>
-        // return : int
-        // example: param: q=[3,5,8], return: 8, after: q=[3,5]
-        // note: assume queue is not empty
-        // note2: CANNOT use temp
-
-        static int RemoveAndReturnLastNoTemp(Queue<int> q)
-        {
-            int len = 0; // size of q
-            int last = 0;
-
-            // loop 1 - get size last
-            while (!q.IsEmpty())
-            {
-                last = q.Remove();
-                len++;
-                q.Insert(last); // preserve q. instead of temp.Insert(last) like question 7
-            }
-
-            // restore q, except last
-            for (int i = 0; i < len - 1; i++)
-                q.Insert(q.Remove());
-
-            return last;
-        }
-
-        // 9
         // InsertToSortedQ
         // param : Queue<int> sorted ascending, int
         // return : void
@@ -303,7 +278,7 @@ namespace _9301_questions
                 q.Insert(temp.Remove());
         }
 
-        // 10
+        // 9
         // Merge2Queues
         // param : Queue<int>, Queue<int>
         // return : Queue<int>
